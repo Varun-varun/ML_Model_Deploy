@@ -32,7 +32,7 @@ def predict():
 
     new_df = pd.DataFrame(data, columns = ['State','intl plan','vmail plan','Day Calls','Day Charge','Eve Charge','Night Mins','Night Calls','Intl Calls','Intl Charge','CustServ Calls'])
     prediction = model.predict(new_df)
-    if format(prediction) == 0:
+    if format(prediction) == 1:
         return render_template('index.html',prediction_text = 'the member is NotChurned')
     else:
         return render_template('index.html',prediction_text = 'the member is Churned') 
